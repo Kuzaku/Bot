@@ -35,12 +35,12 @@ Chat Apa Aja Yang akan berkicau :
 Keyword Bot :
 - Speed / speed [Cek Kecepatan Bot]
 - Summon [Tag All Semua Member Grup]
-- Spam: <on/off> <jumlah spam> <kata2> [Untuk Spam Di Grup]
+- Spam: (on/off) (jumlah spam) (kata2) [Untuk Spam Di Grup]
 - Spamcontact @TAGTARGET [Untuk SPAM Di PC Target]
 - Bye @OrangPertama @OrangKedua @OrangKetiga [Untuk Kick Orang Yang Di Tag (Bisa Kick Lebih dari 1 sekaligus)]
 - Gcreator:inv [ADD + INVITE Ke Grup]
-- Gbc <text> [BroadCast Ke Semua Grup]
+- Gbc (text) [BroadCast Ke Semua Grup]
 - Kick all [Kick Semua Member]
-- Fbc <text> [BroadCast Ke Semua Teman]
+- Fbc (text) [BroadCast Ke Semua Teman]
 
 ### Created By Farzain - zFz
