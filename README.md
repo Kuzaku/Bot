@@ -1,4 +1,4 @@
-# AIOBot V1
+# AIOBot V1.2
 Selfbot All In One [ Without Admin Function ]
 
 Catatan : 
@@ -25,6 +25,16 @@ cl.loginResult()
 Saat pertama login, pada terminal / termux kalian, kalian akan diberi authtoken kalian, contohnya
 ```bash
 authToken -> EmGxXwhjizYIReLFxxxx.eFtfXEQQ9zeBAclHFogALq.3sv5woAxxxxHYXBJFxxxxxxxPToPfzUNv2VYvSXXXX=
+```
+
+### Cara Ubah Komentar Pada AutoLike + AutoKomentar
+Edit File bot.py dan cari teks :
+```bash
+UBAH_INI_SESUAI_KEINGINAN_KALIAN
+```
+Dan ubah teks diatas sesuai komen yang ingin kalian gunakan, gunakan \n untuk enter, contoh :
+```bash
+Autolike By Farzain - zFz\n\nSubscribe Channel Saya yak kalau mau bisa kayak gini\nhttps://youtube.com/c/zfz48
 ```
 
 Chat Apa Aja Yang akan berkicau :
