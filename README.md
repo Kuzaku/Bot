@@ -52,5 +52,7 @@ Keyword Bot :
 - Gbc (text) [BroadCast Ke Semua Grup]
 - Kick all [Kick Semua Member]
 - Fbc (text) [BroadCast Ke Semua Teman]
+- Ginfo [Info Grup]
+- Ourl [Membuka QR Code Grup]
 
 ### Created By Farzain - zFz
