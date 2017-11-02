@@ -173,7 +173,50 @@ def bot(op):
 #----------------------[Masukin Semua SC Yang Ente Pengen Disini]----------------------#
         if op.type == 25:
             msg = op.message
-            
+ 
+#----------------------------[Cek Grup Info]----------------------------#WORK
+            if msg.text == "Ginfo":
+                if msg.toType == 2:
+                    ginfo = cl.getGroup(msg.to)
+                    try:
+                        gCreator = ginfo.creator.displayName
+                    except:
+                        gCreator = "Error"
+                    if wait["lang"] == "JP":
+                        if ginfo.invitee is None:
+                            sinvitee = "0"
+                        else:
+                            sinvitee = str(len(ginfo.invitee))
+                        if ginfo.preventJoinByTicket == True:
+                            u = "close"
+                        else:
+                            u = "open"
+                        cl.sendText(msg.to,"[Nama Grup]\n" + str(ginfo.name) + "\n[Group ID]\n" + msg.to + "\n[Pembuat Group]\n" + gCreator + "\n[Status Profil]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\nJumlah Member : " + str(len(ginfo.members)) + "Member\nMember Pending : " + sinvitee + "Member\nQR Link :" + u + " ")
+                    else:
+                        cl.sendText(msg.to,"[Nama Grup]\n" + str(ginfo.name) + "\n[Group ID]\n" + msg.to + "\n[Pembuat Group]\n" + gCreator + "\n[Status Profil]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tidak Bisa Digunakan Diluar Grup")
+                    else:
+                        cl.sendText(msg.to,"Tidak Bisa Digunakan Diluar Grup")
+#----------------------------[Cek Grup Info]----------------------------#WORK
+
+#----------------------------[Buka Link QR]----------------------------#WORK
+            if msg.text in ["Ourl"]:
+                if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Berhasil")
+                    else:
+                        cl.sendText(msg.to,"Sudah Dibuka")
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Tidak Bisa Digunakan Diluar Grup")
+                    else:
+                        cl.sendText(msg.to,"Tidak Bisa Digunakan Diluar Grup")
+#----------------------------[Buka Link QR]----------------------------#WORK
             
 #----------------------------[Cek SPEED]----------------------------#WORK
             if msg.text in ["Speed","speed"]:
