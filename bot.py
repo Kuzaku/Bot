@@ -64,27 +64,6 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
 
-#---------------------------[AutoLike-nya]---------------------------#
-def autolike():
-     for zx in range(0,100):
-        hasil = cl.activity(limit=100)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
-          try:    
-            #-----------------------------[JANGAN DIEDIT - Hargai Saya]-----------------------------#
-            cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Autolike By Farzain - zFz\n\nSubscribe Channel Saya yak kalau mau bisa kayak gini\nhttps://youtube.com/c/zfz48")
-            #-----------------------------[JANGAN DIEDIT - Hargai Saya]-----------------------------#
-            cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"UBAH_INI_SESUAI_KEINGINAN_KALIAN")
-            print "Like"
-          except:
-            pass
-        else:
-            print "Already Liked"
-     time.sleep(500)
-thread2 = threading.Thread(target=autolike)
-thread2.daemon = True
-thread2.start()
-#---------------------------[AutoLike-nya]---------------------------#
 
 def NOTIFIED_READ_MESSAGE(op):
     try:
@@ -380,7 +359,39 @@ def bot(op):
                         cl.sendText(people, (bctxt))
 #----------------------------[Friend BroadCast]----------------------------#WORK
 
+                if msg.text == "gift":
+                    sendMessage(msg.to, text="gift sent", contentMetadata=None, contentType=9)
 
+			
+		if msg.text == "set":
+                    sendMessage(msg.to, "dah")
+                    try:
+                        del wait['readPoint'][msg.to]
+                        del wait['readMember'][msg.to]
+                    except:
+                        pass
+                    wait['readPoint'][msg.to] = msg.id
+                    wait['readMember'][msg.to] = ""
+                    wait['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                    wait['ROM'][msg.to] = {}
+                    print wait
+                if msg.text == "tes":
+                    if msg.to in wait['readPoint']:
+                        if wait["ROM"][msg.to].items() == []:
+                            chiya = ""
+                        else:
+                            chiya = ""
+                            for rom in wait["ROM"][msg.to].items():
+                                print rom
+                                chiya += rom[1] + "\n"
+
+                        sendMessage(msg.to, "Dibaca: %s\nthat's it\n\nYang mengabaikan:\n%s\nReading point creation date n time:\n[%s]"  % (wait['readMember'][msg.to],chiya,setTime[msg.to]))
+                    else:
+                        sendMessage(msg.to, "Set dulu")
+                else:
+                    pass
+        else:
+            pass
 
 #----------------------[Masukin Semua SC Yang Ente Pengen Disini]----------------------#
 
